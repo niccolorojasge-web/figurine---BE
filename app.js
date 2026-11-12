@@ -4,6 +4,8 @@ const port = process.env.PORT
 
 app.use(express.static('public'))
 
+const figureRouter = require('./routes/figureRoutes')
+
 //app.use(express.json());
 
 const errorsHandler = require('./middlewares/errorsHandler');
@@ -13,6 +15,8 @@ const errorsHandler = require('./middlewares/errorsHandler');
 app.get('/', (req, res) => {
     res.send('hello world')
 })
+
+app.use('/api/books', figureRouter)
 
 app.use(errorsHandler)
 

@@ -1,8 +1,15 @@
 //importiamo express
-const express = require ('express')
+const express = require('express')
 //importiamo express per gestire le rotte 
 const router = express.Router()
 
+const figureController = require('../controllers/figureControllers')
+
+router.get('/', figureController.index)
 
 
-module.exports = router;
+router.get('/', figureController.show)
+
+
+
+module.exports = router
